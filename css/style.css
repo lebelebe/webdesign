@@ -22,7 +22,7 @@
     position:relative;
 }
 .container{
-    width:var(--abwidth);
+    width:var(--cwidth);
 }
 .m-auto{
     margin: 0 auto;
@@ -55,9 +55,45 @@
     border-bottom: 2px solid #222;
 }
 
-header{align-items: end;}
-#hd .d1a{ line-height: 60px; font-size: 26px; min-width: 120px; text-align: center;}
-#gnb > li:hover .d1a{ color:white; background-color: green;}
+header{width: 200px;}
+.right{width: 800px;}
+
+/* a형 */
+/* #hd .d1a{ line-height: 60px; font-size: 26px; min-width: 120px; text-align: center;} */
+
+ /* c형 */
+#hd .d1a{ line-height: 60px; font-size: 20px;}
+
+#gnb > li:hover .d1a{ color:white; background-color: green;} /* 공통 */
+
+/* a형 소메뉴 글자 길어도 넘치지 않게 min-width */
+/* .d2{
+    height:0;
+    overflow: hidden;
+    background-color: green;
+    transition: 0.5s;
+    font-size: 18px;
+    left:0;
+    right:0
+    top:100%;
+    line-height: 2;
+    min-width: 120px;
+    text-align: center;
+    z-index: 3;
+}*/
+/* C형 */
+/* abs없음 */
+/* .d2{
+    height:0;
+    overflow: hidden;
+    background-color: green;
+    transition: 0.5s;
+    font-size: 18px;
+    line-height: 2;
+    text-align: center;
+    z-index: 3;
+} */
+/* abs있음 */
 .d2{
     height:0;
     overflow: hidden;
@@ -65,16 +101,51 @@ header{align-items: end;}
     transition: 0.5s;
     font-size: 18px;
     line-height: 2;
-    left:0;
-    right: 0;
-    top: 100%;
-    min-width: 120px; /* 소메뉴 글자 길어도 넘치지 않게 */
     text-align: center;
+    z-index: 3;
+    left: 100%;
+    top: -50px;
+    width:200px;
 }
-.d2 a { color: white;}
-#gnb > li:hover .d2{
-    height: 180px;
+
+.d2 a { color: white;} /*공통*/
+
+
+/* A형 */
+
+/* a형 li 하나씩 나오는거*/
+/*#gnb > li:hover .d2{
+    height: 180px; 
+}*/
+/* a형 li 전부 나오는거*/ 
+/*#gnb:hover .d2{
+    height: 180px; 
+}*/
+/* a형 아래 덮기 */ 
+/*#gnb:after{
+    content:"";
+    position: absolute; background-color: green;
+    top:100px; left: 0; right: 0; height: 0px; transition: 0.5s;
+}*/
+/* a형 아래 덮기 지연주기(가상선택자 여러개 붙어도 그냥 바싹 붙인다.) */ 
+/*#gnb:hover:after{
+    height:180px;
+}*/ 
+
+/* C형 */
+
+#gnb li:hover .d2{
+    height: 180px; 
 }
+/*2번째만 작게*/
+/* #gnb li:nth-child(2):hover .d2{
+    height:80px;
+}  */
+#gnb li:nth-child(2):hover .d2{
+    height:80px;
+    top:-10px;
+} 
+
 .d2 li:hover{ background-color: white;}
 .d2 li:hover a{ color: black;} /* 글자는 a태그에 바로 넣어야 색이 들어감 */
 #slider{}
